@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import ProgressCircle from 'react-native-progress-circle';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import * as Updates from 'expo-updates';
+
 const HomeScreen = ({ navigation }) => {
   const [userName, setUserName] = useState('User');
   const [budget, setBudget] = useState(0);

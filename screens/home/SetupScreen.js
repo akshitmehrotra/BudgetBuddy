@@ -79,7 +79,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useEffect } from 'react';
-import * as Updates from 'expo-updates';
+
 const SetupScreen = ({ navigation }) => {
   const [userName, setUserName] = useState('');
   const [budget, setBudget] = useState('');
@@ -93,24 +93,7 @@ const SetupScreen = ({ navigation }) => {
       navigation.replace('Home');
     }
   };
-  useEffect(() => {
-    async function checkForUpdates() {
-      const update = await Updates.checkForUpdateAsync();
-      if (update.isAvailable) {
-        // Handle the available update
-        // You might prompt the user to reload the app or do it automatically
-        await applyUpdatesAndReload();
-      }
-    }
 
-    async function applyUpdatesAndReload() {
-      await Updates.fetchUpdateAsync();
-      Updates.reloadAsync();
-    }
-
-    // Call checkForUpdates when the app is launched
-    checkForUpdates();
-  }, []);
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>Setup Budget</Text>

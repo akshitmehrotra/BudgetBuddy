@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, FlatList, StyleSheet, SafeAreaView } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import * as Updates from 'expo-updates';
+
 const ExpensesHistory = () => {
   const [transactions, setTransactions] = useState([]);
 
@@ -19,24 +19,7 @@ const ExpensesHistory = () => {
 
     fetchTransactions();
   }, []);
-  useEffect(() => {
-    async function checkForUpdates() {
-      const update = await Updates.checkForUpdateAsync();
-      if (update.isAvailable) {
-        // Handle the available update
-        // You might prompt the user to reload the app or do it automatically
-        await applyUpdatesAndReload();
-      }
-    }
 
-    async function applyUpdatesAndReload() {
-      await Updates.fetchUpdateAsync();
-      Updates.reloadAsync();
-    }
-
-    // Call checkForUpdates when the app is launched
-    checkForUpdates();
-  }, []);
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     const day = date.getDate();

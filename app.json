@@ -1,11 +1,21 @@
 {
   "expo": {
-    "name": "bo",
+    "name": "Budget Buddy: A Budgeting App",
     "slug": "bo",
     "version": "1.0.0",
+    "icon": "assets/icon.png",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.akshit.budgetbuddy.react"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "074e6fc6-9f36-4d33-b5b5-6ae2ae8c613d"
+      }
+    }
   },
-  "name": "bo"
+  "name": "Budget Buddy: A Budgeting App"
 }

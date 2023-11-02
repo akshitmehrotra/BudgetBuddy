@@ -164,7 +164,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, Modal } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Updates } from 'expo';
+
 const AddTransactionScreen = ({ navigation }) => {
   const [amount, setAmount] = useState('');
   const [category, setCategory] = useState('');
